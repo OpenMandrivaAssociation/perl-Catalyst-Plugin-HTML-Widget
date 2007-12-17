@@ -20,7 +20,6 @@ BuildRequires:	perl(Catalyst) >= 5.5
 BuildRequires:	perl(HTML::Widget)
 Requires:	perl >= 5.8.1
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 HTML Widget And Validation Framework
