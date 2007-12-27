@@ -1,9 +1,8 @@
-%define realname Catalyst-Plugin-HTML-Widget
-%define name	perl-%{realname}
+%define module Catalyst-Plugin-HTML-Widget
+%define name	perl-%{module}
 %define	modprefix Catalyst
-
 %define version 1.1
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary:	HTML Widget And Validation Framework
 Name:		%{name}
@@ -11,26 +10,21 @@ Version:	%{version}
 Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{realname}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel >= 5.8.1
-%endif
+URL:		http://search.cpan.org/dist/%{module}/
+Source:     http://www.cpan.org/modules/by-module/Date/%{module}-%{version}.tar.bz2
 BuildRequires:	perl(Catalyst) >= 5.5
 BuildRequires:	perl(HTML::Widget)
-Requires:	perl >= 5.8.1
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Buildroot:	%{_tmppath}/%{version}-%{release}
 
 %description
 HTML Widget And Validation Framework
 
-
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
+%__perl Makefile.PL INSTALLDIRS=vendor --skipdeps
 %make
 
 %check
@@ -48,6 +42,3 @@ rm -rf %{buildroot}
 
 %clean
 rm -rf %{buildroot}
-
-
-
