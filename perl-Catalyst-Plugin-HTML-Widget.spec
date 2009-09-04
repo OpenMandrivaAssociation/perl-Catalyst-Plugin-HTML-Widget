@@ -2,7 +2,7 @@
 %define name	perl-%{module}
 %define	modprefix Catalyst
 %define version 1.1
-%define release %mkrel 6
+%define release %mkrel 7
 
 Summary:	HTML Widget And Validation Framework
 Name:		%{name}
