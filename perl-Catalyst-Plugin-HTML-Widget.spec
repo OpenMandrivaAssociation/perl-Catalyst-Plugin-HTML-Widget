@@ -1,15 +1,13 @@
 %define upstream_name    Catalyst-Plugin-HTML-Widget
-%define upstream_version 1.1
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	1.1
+Release:	7
 
 Summary:	HTML Widget And Validation Framework
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Catalyst-Plugin-HTML-Widget
-Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-Plugin-HTML-Widget-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BO/BOBTFISH/Catalyst-Plugin-HTML-Widget-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ BuildArch:	noarch
 HTML Widget And Validation Framework.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor --skipdeps
@@ -47,9 +45,7 @@ perl Makefile.PL INSTALLDIRS=vendor --skipdeps
 
 * Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 1.100.0-1mdv2011.0
 + Revision: 505420
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.1-7mdv2010.0
+- rebuild using %1.1 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.1-7mdv2010.0
 + Revision: 430271
 - rebuild
 
